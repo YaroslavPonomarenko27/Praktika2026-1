@@ -1,18 +1,36 @@
 from abc import ABC, abstractmethod
 
-class Animal(ABC):
+
+class Vehicle(ABC):
+
     @abstractmethod
-    def make_sound(self):
+    def move(self):
         pass
 
-class Dog(Animal):
-    def make_sound(self):
-        print("Гав-гав")
+    @abstractmethod
+    def fuel_type(self):
+        pass
 
-class Cat(Animal):
-    def make_sound(self):
-        print("Мяу")
 
-animals = [Dog(), Cat()]
-for a in animals:
-    a.make_sound()
+class Car(Vehicle):
+    def move(self):
+        print("Автомобіль їде дорогою")
+
+    def fuel_type(self):
+        print("Паливо: бензин")
+
+
+class ElectricScooter(Vehicle):
+    def move(self):
+        print("Електросамокат рухається містом")
+
+    def fuel_type(self):
+        print("Паливо: електроенергія")
+
+
+vehicles = [Car(), ElectricScooter()]
+
+for v in vehicles:
+    v.move()
+    v.fuel_type()
+    print("----------------")

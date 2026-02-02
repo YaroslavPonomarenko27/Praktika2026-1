@@ -1,12 +1,16 @@
-# Базовий клас
-class Person:
-    def __init__(self, name, age):
+class Student:
+    def __init__(self, name, grade):
         self.name = name
-        self.age = age
+        self.grade = grade
 
-    def greet(self):
-        print(f"Привіт, мене звати {self.name}")
+    def info(self):
+        print("Ім'я:", self.name)
+        print("Оцінка:", self.grade)
 
-# Створення об'єкта
-p = Person("Іван", 30)
-p.greet()
+# Створення об'єктів (екземплярів класу)
+student1 = Student("Олена", 95)
+student2 = Student("Андрій", 88)
+
+student1.info()
+print("-----")
+student2.info()
